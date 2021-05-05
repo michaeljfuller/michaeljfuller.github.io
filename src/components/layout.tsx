@@ -7,6 +7,7 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { css } from '@emotion/css'
 
 import Header from "./header"
 import "./layout.css"
@@ -27,19 +28,9 @@ const Layout = ({ children }: LayoutProps) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div className={styles.container}>
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
+        <footer className={styles.footer}>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
@@ -50,3 +41,14 @@ const Layout = ({ children }: LayoutProps) => {
 }
 
 export default Layout
+
+const styles = {
+  container: css`
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 1.0875rem 1.45rem;
+  `,
+  footer: css`
+    margin-top: 2rem;
+  `
+};
