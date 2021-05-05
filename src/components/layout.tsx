@@ -10,7 +10,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import { css } from '@emotion/css'
 
 import Header from "./header"
-import "./layout.css"
 
 export type LayoutProps = React.PropsWithChildren<{}>;
 
