@@ -5,6 +5,7 @@ module.exports = {
     author: `Michael Fuller`,
   },
   plugins: [
+    'gatsby-plugin-graphql-config', // Generate schema file in the .cache/ for IDE type hinting writing queries.
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
