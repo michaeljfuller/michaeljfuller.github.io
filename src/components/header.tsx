@@ -18,8 +18,6 @@ const Header = (props: HeaderProps) => {
       <div className={styles.links}>
         <HeaderLink path="/" currentPath={path}>Home</HeaderLink>
         <HeaderLink path="/about/" currentPath={path}>About</HeaderLink>
-        <HeaderLink path="/page-2/" currentPath={path}>Page 2</HeaderLink>
-        <HeaderLink path="/using-typescript/" currentPath={path}>Using Typescript</HeaderLink>
       </div>
     </div>
   </header>
