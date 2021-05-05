@@ -1,5 +1,9 @@
 /* Imported by gatsby-browser.js */
 
+html {
+    overflow-y: auto;
+}
+
 /*********************************************
                 BODY
 *********************************************/
@@ -12,7 +16,8 @@ body {
     ) fixed;
     background-size: 200% 200%;
 
-    --background-scroll-animation: BackgroundScroll 8s ease infinite;
+    --background-scroll-animation: BackgroundScroll 5s ease infinite;
+    --background-scroll-distance: 18% 18%;
     -webkit-animation: var(--background-scroll-animation);
     -moz-animation: var(--background-scroll-animation);
     -o-animation: var(--background-scroll-animation);
@@ -21,22 +26,22 @@ body {
 
 @-webkit-keyframes BackgroundScroll {
     0% {background-position: 0 0}
-    50% {background-position: 5% 5%}
+    50% {background-position: var(--background-scroll-distance)}
     100% {background-position: 0 0}
 }
 @-moz-keyframes BackgroundScroll {
     0% {background-position: 0 0}
-    50% {background-position: 5% 5%}
+    50% {background-position: var(--background-scroll-distance)}
     100% {background-position: 0 0}
 }
 @-o-keyframes BackgroundScroll {
     0% {background-position: 0 0}
-    50% {background-position: 5% 5%}
+    50% {background-position: var(--background-scroll-distance)}
     100% {background-position: 0 0}
 }
 @keyframes BackgroundScroll {
     0% {background-position: 0 0}
-    50% {background-position: 5% 5%}
+    50% {background-position: var(--background-scroll-distance)}
     100% {background-position: 0 0}
 }
 
