@@ -4,37 +4,83 @@ import { css } from '@emotion/css'
 
 export interface HeaderProps {
   siteTitle: string;
+  path?: string;
 }
 
-const Header = ({ siteTitle }: HeaderProps) => (
-  <header className={styles.root}>
+const Header = (props: HeaderProps) => {
+  const { siteTitle, path } = props;
+
+  return <header className={styles.root}>
     <div>
       <h1 className={styles.title}>
-        <Link to="/">
-          {siteTitle}
-        </Link>
+        <HeaderLink path="/" currentPath={path}>{siteTitle}</HeaderLink>
       </h1>
+      <div className={styles.links}>
+        <HeaderLink path="/" currentPath={path}>Home</HeaderLink>
+        <HeaderLink path="/about/" currentPath={path}>About</HeaderLink>
+        <HeaderLink path="/page-2/" currentPath={path}>Page 2</HeaderLink>
+        <HeaderLink path="/using-typescript/" currentPath={path}>Using Typescript</HeaderLink>
+      </div>
     </div>
   </header>
-)
+}
 
 export default Header
 
+type HeaderLinkProps = React.PropsWithChildren<{
+  path: string;
+  currentPath?: string;
+  className?: string;
+}>;
+const HeaderLink = ({children, path, currentPath, className}: HeaderLinkProps) => (
+  path === currentPath ?
+  <span className={className}>{children}</span> :
+  <Link to={path} className={className}>{children}</Link>
+);
+
 const styles = {
   root: css`
-    background: rebeccapurple;
-      margin-bottom: 1.45rem;
-      & > div {
-          margin: 0 auto;
-          max-width: 960px;
-          padding: 1.45rem 1.0875rem;
-      }
+    background-image: linear-gradient(
+      var(--lighting-angle), 
+      var(--color-secondary) 60%, 
+      var(--color-primary) 150%
+    );
+    
+    border-bottom: 1px solid var(--color-primary);
+    margin-bottom: 1rem;
+    & > div {
+      margin: 0 auto;
+      max-width: 960px;
+      padding: .5rem 1rem;
+    }
   `,
   title: css`
     margin: 0;
-    a {
-        color: white;
-        text-decoration: none;
+    * {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 1.8rem;
+      user-select: none;
     }
   `,
+  links: css`
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    span {
+      color: var(--color-primary);
+      text-decoration: underline;
+      user-select: none;
+    }
+    a {
+      color: var(--color-primary);
+      text-decoration: none;
+      filter: brightness(80%);
+    }
+    a:hover,
+    a:active,
+    a:focus {
+      filter: unset;
+    }
+  `
 }

@@ -6,11 +6,11 @@ import Seo from "../components/seo"
 
 type MarkdownPageProps = PageProps<DataProps>;
 
-const MarkdownPageTemplate: React.FC<MarkdownPageProps> = ({ data }) => {
+const MarkdownPageTemplate: React.FC<MarkdownPageProps> = ({ data, path }) => {
   const meta = data.markdownRemark.frontmatter;
   const body = data.markdownRemark.html;
 
-  return <Layout>
+  return <Layout path={path}>
     <Seo title={meta.title} />
     <div dangerouslySetInnerHTML={{ __html: body }} />
   </Layout>;

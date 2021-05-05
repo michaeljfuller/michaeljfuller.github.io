@@ -11,9 +11,11 @@ import { css } from '@emotion/css'
 
 import Header from "./header"
 
-export type LayoutProps = React.PropsWithChildren<{}>;
+export type LayoutProps = React.PropsWithChildren<{
+  path?: string;
+}>;
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, path }: LayoutProps) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,7 +28,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} path={path} />
       <div className={styles.container}>
         <main>{children}</main>
         <footer className={styles.footer}>

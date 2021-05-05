@@ -1,12 +1,12 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link, PageProps } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
+const IndexPage = (props: PageProps) => {
+  return <Layout path={props.path}>
     <Seo title="Home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -23,6 +23,6 @@ const IndexPage = () => (
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
     </p>
   </Layout>
-)
+}
 
 export default IndexPage
