@@ -12,7 +12,9 @@ export default function Parallax({
     clientX = 0
   } = useMouseMove();
 
-  const screenCenter = window.innerWidth/2;
+  const hasWindow = typeof window !== "undefined"
+  const screenWidth = (hasWindow && window.innerWidth) || 0;
+  const screenCenter = screenWidth/2;
   const offset = screenCenter - clientX;
   const fraction = offset / screenCenter;
   const minOpacity = 0.3;
