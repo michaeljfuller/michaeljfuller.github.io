@@ -32,9 +32,7 @@ const Layout = ({ children, path }: LayoutProps) => {
       <div className={styles.container}>
         <main>{children}</main>
         <footer className={styles.footer}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          Built with <a href="https://www.gatsbyjs.com">Gatsby</a> - a popular Static Site Generator utilising <a href="https://reactjs.org/">React</a>.
         </footer>
       </div>
     </>
@@ -50,6 +48,9 @@ const styles = {
     padding: 0 1.0875rem 1.45rem;
   `,
   footer: css`
-    margin-top: 2rem;
+    margin-top: 1rem;
+    border-top: 1px solid white;
+    padding-top: 0.5rem;
+    text-align: center;
   `
 };
