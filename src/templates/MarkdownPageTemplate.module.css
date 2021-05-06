@@ -1,0 +1,53 @@
+/************************************
+            STANDARD
+************************************/
+.standard {
+
+}
+
+/************************************
+            EXPERIENCE
+************************************/
+
+.experience h2 {
+    color: var(--color-primary);
+    margin: 0 0 0.3rem;
+}
+.experience h3 {
+    color: var(--color-secondary);
+    margin: 0 0 1rem;
+    line-height: 1.2rem;
+    font-size: 1rem;
+}
+.experience p,
+.experience ul {
+    margin-bottom: 0.5rem;
+}
+.experience li {
+    margin-bottom: 0.2rem;
+}
+
+.experience hr {
+    background-color: var(--color-text);
+    margin: 0.7rem 0;
+}
+
+/************************************
+            EXPERIENCE
+************************************/
+
+.skills h2 {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin: 0 0 0.3rem;
+}
+.skills li {
+    margin-bottom: 0.2rem;
+}
+.skills a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+.skills a:hover {
+    filter: brightness(150%);
+}
