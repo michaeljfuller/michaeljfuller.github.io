@@ -31,3 +31,23 @@
     background-color: var(--color-text);
     margin: 0.7rem 0;
 }
+
+/************************************
+            EXPERIENCE
+************************************/
+
+.skills h2 {
+    font-size: 1rem;
+    color: var(--color-primary);
+    margin: 0 0 0.3rem;
+}
+.skills li {
+    margin-bottom: 0.2rem;
+}
+.skills a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+.skills a:hover {
+    filter: brightness(150%);
+}

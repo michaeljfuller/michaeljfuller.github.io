@@ -13,10 +13,11 @@ const Header = (props: HeaderProps) => {
   return <header className={styles.root}>
     <div>
       <h1 className={styles.title}>
-        <HeaderLink path="/" currentPath={path}>{siteTitle}</HeaderLink>
+        {siteTitle}
       </h1>
       <div className={styles.links}>
         <HeaderLink path="/" currentPath={path}>Home</HeaderLink>
+        <HeaderLink path="/skills/" currentPath={path}>Skills</HeaderLink>
         <HeaderLink path="/experience/" currentPath={path}>Experience</HeaderLink>
       </div>
     </div>
@@ -54,12 +55,10 @@ const styles = {
   `,
   title: css`
     margin: 0;
-    * {
-      color: var(--color-primary);
-      text-decoration: none;
-      font-size: 1.8rem;
-      user-select: none;
-    }
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: 1.8rem;
+    user-select: none;
   `,
   links: css`
     display: flex;
