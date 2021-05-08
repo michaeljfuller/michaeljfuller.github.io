@@ -6,8 +6,8 @@ import { css } from "@emotion/css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Parallax from "../components/parallax"
+import { Social } from "../components/social"
 
-const socialHeight = 60;
 const picSize = 250;
 
 const IndexPage = (props: PageProps) => {
@@ -47,28 +47,8 @@ const IndexPage = (props: PageProps) => {
       />
 
     </div>
-    <div className={styles.social}>
 
-      <a href="https://www.linkedin.com/in/michael-fuller-35ab0065/" target="_blank">
-        <StaticImage
-          src="../images/linkedin.png"
-          height={socialHeight}
-          placeholder="none"
-          quality={95}
-          alt="LinkedIn"
-        />
-      </a>
-      <a href="https://github.com/michaeljfuller" target="_blank">
-        <StaticImage
-          src="../images/github.png"
-          height={socialHeight}
-          placeholder="none"
-          quality={95}
-          alt="GitHub"
-        />
-      </a>
-
-    </div>
+    <Social />
 
     <Parallax modifier={0.02}>
       <p className={styles.quote}>
@@ -108,19 +88,4 @@ const styles = {
   underline: css`
     text-decoration: underline;
   `,
-  social: css`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    height: ${socialHeight}px;
-    a {
-      opacity: 0.7;
-    }
-    a: hover {
-      opacity: 1;
-    }
-    img {
-      height: ${socialHeight}px;
-    }
-  `
 }
