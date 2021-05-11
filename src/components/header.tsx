@@ -19,6 +19,7 @@ const Header = (props: HeaderProps) => {
         <HeaderLink path="/" currentPath={path}>Home</HeaderLink>
         <HeaderLink path="/skills/" currentPath={path}>Skills</HeaderLink>
         <HeaderLink path="/experience/" currentPath={path}>Experience</HeaderLink>
+        <HeaderLink path="/projects/" currentPath={path}>Projects</HeaderLink>
       </div>
     </div>
   </header>
