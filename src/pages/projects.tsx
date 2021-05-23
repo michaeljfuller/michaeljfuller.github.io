@@ -15,6 +15,25 @@ const ProjectsPage = (props: PageProps) => {
 
     <div className={styles.content}>
 
+      <Project title="Game of Life in React">
+
+        <p>
+          <a href="https://michaeljfuller.github.io/game-of-life/">This</a> is a quick React app that
+          replicates <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway's Game of Life</a>.<br />
+          It's small enough to have a quick read through the <a href="https://github.com/michaeljfuller/game-of-life">source</a>, while being complex enough to showcase.<br />
+          The project is a pure React app with custom Hooks, TypeScript, a CSS Grid and TDD unit tests.
+        </p>
+
+        <div className={styles.images}>
+          <StaticImage
+            src="../images/projects/game-of-life.png"
+            quality={95}
+            alt="Game of Life"
+            height={300}
+          />
+        </div>
+
+      </Project>
       <Project title="React Native Web + Mobile App, with AWS">
 
         <p>

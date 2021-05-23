@@ -50,8 +50,10 @@ body {
 *********************************************/
 a {
     color: var(--color-primary);
+    text-decoration-line: none;
 }
 a:hover,
 a:active {
     filter: brightness(120%);
+    text-decoration-line: underline;
 }
